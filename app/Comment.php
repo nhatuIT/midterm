@@ -22,4 +22,8 @@ class Comment extends Model
     public function parent(){
         return $this->belongsTo(Comment::class, 'parent_id');
     }
+
+    public function like(){
+        return $this->hasMany(Like::class, 'comment_id')->whereState('1');
+    }
 }

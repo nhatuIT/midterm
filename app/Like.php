@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Like extends Model
 {
     protected $fillable = [
-         'user_id', 'thread_id'
+         'user_id', 'thread_id', 'comment_id','state','type'
     ];
 
     public function thread() {
@@ -18,5 +18,8 @@ class Like extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function comment() {
+        return $this->belongsTo(Comment::class);
+    }
 
 }

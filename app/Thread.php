@@ -19,6 +19,6 @@ class Thread extends Model
     }
 
     public function like(){
-        return $this->hasMany(Like::class, 'thread_id');
+        return $this->hasMany(Like::class, 'thread_id')->whereState('1');
     }
 }
